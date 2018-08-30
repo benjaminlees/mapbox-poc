@@ -8,6 +8,10 @@
       "mapbox": {
           "url": "mapbox://mapbox.mapbox-streets-v7",
           "type": "vector"
+      },
+      "mapboxCustom": {
+        "url": "mapbox://styles/benjilees/cjlgmghm091e52rp7234h27nk",
+        "type": "vector"
       }
   },
   "sprite": "mapbox://sprites/mapbox/basic-v8",
