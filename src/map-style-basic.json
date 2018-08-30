@@ -1,6 +1,13 @@
 {
   "version": 8,
   "name": "Basic",
+  "center": [
+    -0.10009484999999999,
+    51.48997535
+  ],
+  "zoom": 0,
+  "bearing": 0,
+  "pitch": 0,
   "metadata": {
       "mapbox:autocomposite": true
   },
@@ -9,14 +16,24 @@
           "url": "mapbox://mapbox.mapbox-streets-v7",
           "type": "vector"
       },
-      "mapboxCustom": {
-        "url": "mapbox://styles/benjilees/cjlgmghm091e52rp7234h27nk",
+      "custom-source": {
+        "url": "mapbox://benjilees.bbr19a0h",
         "type": "vector"
       }
   },
   "sprite": "mapbox://sprites/mapbox/basic-v8",
   "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
   "layers": [
+        {
+        "layout": {},
+        "type": "fill",
+        "id": "archive-7ujowg",
+        "paint": {
+            "fill-color": "#a0cfdf"
+        },
+        "source": "custom-source",
+        "source-layer": "Archive-7ujowg"
+        },
       {
           "id": "background",
           "type": "background",

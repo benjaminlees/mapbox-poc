@@ -1,13 +1,10 @@
 import * as React from 'react';
-import ReactMapboxGl from 'react-mapbox-gl';
-import styled from 'styled-components';
+import ReactMapboxGl, { Source } from 'react-mapbox-gl';
 import mapStyle from './map-style-basic.json';
 
 const MAPBOX_TOKEN = "pk.eyJ1IjoiYmVuamlsZWVzIiwiYSI6ImNqbGRudGZndDBjOGMzcG5qZXV0ZXpicTkifQ.mpDc7JtZyjUF_tMqxWRJWA";
 
 const Mapbox = ReactMapboxGl({
-  minZoom: 8,
-  maxZoom: 15,
   accessToken: MAPBOX_TOKEN,
 });
 
@@ -48,7 +45,8 @@ export default class LondonCycle extends React.Component {
         containerStyle={{
           height: "100vh", width: "100vw"
         }}
-      />
+      >
+      </Mapbox>
     );
   }
 }
