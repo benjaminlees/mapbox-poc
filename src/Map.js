@@ -21,7 +21,7 @@ const flyToOptions = {
 export default class LondonCycle extends React.Component {
   state = {
     center: [-0.109970527, 51.52916347],
-    zoom: [11],
+    zoom: [12]
   };
 
   onStyleLoad = (map) => {
@@ -30,7 +30,7 @@ export default class LondonCycle extends React.Component {
   };
 
   render() {
-    const { center, zoom } = this.state;
+    const { center, zoom, pitch } = this.state;
 
     return (
       <Mapbox
@@ -41,7 +41,7 @@ export default class LondonCycle extends React.Component {
         containerStyle={containerStyles}
         flyToOptions={flyToOptions}
         style={mapStyle}
-        maxBounds={[[-6.939282, 49.808189], [0.443531, 58.812584]]}
+        maxBounds={[[-0.567483, 51.287735], [0.237728, 51.661076]]}
         containerStyle={{
           height: "100vh", width: "100vw"
         }}

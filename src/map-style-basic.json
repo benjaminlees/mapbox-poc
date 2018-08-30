@@ -1,13 +1,6 @@
 {
   "version": 8,
   "name": "Basic",
-  "center": [
-    -0.10009484999999999,
-    51.48997535
-  ],
-  "zoom": 0,
-  "bearing": 0,
-  "pitch": 0,
   "metadata": {
       "mapbox:autocomposite": true
   },
@@ -24,16 +17,6 @@
   "sprite": "mapbox://sprites/mapbox/basic-v8",
   "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
   "layers": [
-        {
-        "layout": {},
-        "type": "fill",
-        "id": "archive-7ujowg",
-        "paint": {
-            "fill-color": "#a0cfdf"
-        },
-        "source": "custom-source",
-        "source-layer": "Archive-7ujowg"
-        },
       {
           "id": "background",
           "type": "background",
@@ -66,6 +49,17 @@
               "fill-color": "#a0cfdf"
           },
           "interactive": true
-      }
+      },
+      {
+        "layout": {},
+        "type": "fill",
+        "id": "archive-7ujowg",
+        "paint": {
+            "fill-color": "#006a4c"
+        },
+        "source": "custom-source",
+        "source-layer": "Archive-7ujowg",
+        "maxzoom": 22
+        }
     ]
 }
