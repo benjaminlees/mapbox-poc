@@ -1,63 +1,62 @@
-import React, {Component} from 'react';
-import MapGL from 'react-map-gl';
+import * as React from 'react';
+import ReactMapboxGl from 'react-mapbox-gl';
+import styled from 'styled-components';
 import mapStyle from './map-style-basic.json';
 
 const MAPBOX_TOKEN = "pk.eyJ1IjoiYmVuamlsZWVzIiwiYSI6ImNqbGRudGZndDBjOGMzcG5qZXV0ZXpicTkifQ.mpDc7JtZyjUF_tMqxWRJWA";
-export default class Map extends Component {
 
+const Mapbox = ReactMapboxGl({
+  minZoom: 8,
+  maxZoom: 15,
+  accessToken: MAPBOX_TOKEN,
+});
+
+const containerStyles = {
+  flex: 1,
+};
+
+// Define layout to use in Layer component
+
+const StyledPopup = styled.div`
+  background: white;
+  color: #3f618c;
+  font-weight: 400;
+  padding: 5px;
+  border-radius: 2px;
+`;
+
+const flyToOptions = {
+  speed: 0.8
+};
+
+export default class LondonCycle extends React.Component {
   state = {
-    mapStyle,
-    viewport: {
-      latitude: 54.5074,
-      longitude: -4,
-      zoom: 5,
-      maxZoom: 5,
-      bearing: 0,
-      pitch: 0,
-      width: 500,
-      height: 500,
-    }
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this._resize);
-    this._resize();
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this._resize);
-  }
-
-  _resize = () => {
-    this.setState({
-      viewport: {
-        ...this.state.viewport,
-        width: this.props.width || window.innerWidth,
-        height: this.props.height || window.innerHeight
-      }
-    });
+    center: [-0.109970527, 51.52916347],
+    zoom: [11],
   };
 
-  _onViewportChange = viewport => {
-    this.setState( {
-      viewport: { ...this.state.viewport, ...viewport }
-    });
+  onStyleLoad = (map) => {
+    const { onStyleLoad } = this.props;
+    return onStyleLoad && onStyleLoad(map);
   };
-
-  _onStyleChange = mapStyle => this.setState({mapStyle});
 
   render() {
-
-    const {viewport, mapStyle} = this.state;
+    const { center, zoom } = this.state;
 
     return (
-      <MapGL
-        {...viewport}
-        mapStyle={mapStyle}
-        onViewportChange={this._onViewportChange}
-        mapboxApiAccessToken={MAPBOX_TOKEN} >
-      </MapGL>
+      <Mapbox
+        onStyleLoad={this.onStyleLoad}
+        center={center}
+        zoom={zoom}
+        onDrag={this.onDrag}
+        containerStyle={containerStyles}
+        flyToOptions={flyToOptions}
+        style={mapStyle}
+        maxBounds={[[-6.939282, 49.808189], [0.443531, 58.812584]]}
+        containerStyle={{
+          height: "100vh", width: "100vw"
+        }}
+      />
     );
   }
-
 }
