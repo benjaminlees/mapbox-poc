@@ -18,12 +18,15 @@ const flyToOptions = {
   speed: 0.8,
 };
 
+interface IProps {
+}
+
 interface IState {
   center: number[];
   defaultZoom: number;
 }
 
-export default class Map extends React.Component<{}, IState> {
+export default class Map extends React.Component<IProps, IState> {
   constructor(props: {}) {
     super(props);
 

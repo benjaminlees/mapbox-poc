@@ -8,14 +8,14 @@ const Container = styled.div`
   width: 100%;
 `;
 
-interface Iprops {
+interface IProps {
   navItems: string[];
 }
 
 export const updateVal = (val: number) => val % 3;
 
-class Header extends React.Component<Iprops, { selected: number }> {
-  constructor(props: Iprops) {
+class Header extends React.Component<IProps, { selected: number }> {
+  constructor(props: IProps) {
     super(props);
     this.state = {
       selected: 0,
