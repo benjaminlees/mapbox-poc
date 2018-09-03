@@ -13,16 +13,15 @@ export const getAssets = async (ctx: Koa.Context, next: Function) => {
   }
 
   try {
-    const requestedPath = ctx.request.url;
-    console.log(ctx.request.url);
-  
-    await new Promise(function (resolve) {
-      fs.exists(path.resolve(root, requestedPath), function (exists) {
+    const requestedPath = ctx.request.url.replace('assets/', '');
+
+    await new Promise((resolve) =>
+      fs.exists(path.resolve(root, requestedPath), (exists) => {
         resolve(exists);
       })
-    });
+    );
 
-    return send(ctx, ctx.url, { root });
+    return send(ctx, requestedPath, { root });
   } catch (e) {
     console.log('File not found');
   }

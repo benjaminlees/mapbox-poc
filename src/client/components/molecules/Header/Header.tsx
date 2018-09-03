@@ -6,9 +6,22 @@ import theme from '@styles/theme';
 import { actions } from '@redux/general';
 import Tab from '@atoms/tab/tab';
 
+const Nav = styled.nav`
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+`;
+
 const Container = styled.div`
   display: flex;
   width: 100%;
+`;
+
+const Title = styled.div`
+  padding: ${props => props.theme.spacing.medium};
+  font-size: ${props => props.theme.fontSizes.medium};
+  color: ${props => props.theme.colors.primary};
+  font-weight: bold;
 `;
 
 interface IProps {
@@ -36,10 +49,16 @@ class Header extends React.Component<IProps, { selected: number }> {
     const { beige, darkBeige } = theme.colors;
     return (
       <Container>
+        <img src="/assets/logo.svg" />
+        <Title>
+          property book
+        </Title>
+        <Nav>
+          {navItems.map((item, i) =>
+            <Tab key={i} select={() => this.select(i)} colour={i === selected ? beige : darkBeige} text={item} />)
+          }
+        </Nav>
         <button onClick={doSomething}>test</button>
-        {navItems.map((item, i) =>
-          <Tab key={i} select={() => this.select(i)} colour={i === selected ? beige : darkBeige} text={item} />)
-        }
       </Container>
     );
   }

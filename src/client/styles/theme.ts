@@ -1,11 +1,13 @@
 const colors = {
+  primary: '#00684b',
   beige: '#f5f5dc',
   black: '#111111',
   darkBeige: '#bbbb98',
   transparent: 'rgba(0,0,0,0)',
   white: '#ffffff',
 };
-const fonts = {
+
+const fontSizes = {
   large: '40px',
   medium: '20px',
   small: '10px',
@@ -25,7 +27,7 @@ const spacing = {
 
 export default {
   colors,
-  fonts,
+  fontSizes,
   letterSpacing,
   spacing,
 };
