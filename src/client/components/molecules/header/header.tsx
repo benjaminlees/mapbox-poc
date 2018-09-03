@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Tab from 'src/app/components/atoms/tab/tab';
-import theme from 'src/app/styles/theme';
 import styled from 'styled-components';
+import Tab from '../../atoms/tab/tab';
+import theme from '../../../styles/theme';
 
 const Container = styled.div`
   display: flex;

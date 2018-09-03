@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "yarn dev:server && webpack-dev-server --config ./build/config.js",
-    "dev:server": "nodemon --watch 'src/server/**/*.ts'",
+    "dev": "yarn dev:server & yarn dev:client",
+    "dev:client": "webpack-dev-server --config ./build/dev.config.js",
+    "dev:server": "nodemon --watch 'src/server/**/*.ts' --exec 'ts-node --project ./typescript/server.conf.json' ./src/server/index.ts",
     "test": "jest",
     "lint": "tslint -p tsconfig.json"
   },
@@ -33,6 +34,7 @@
     "source-map-loader": "^0.2.4",
     "ts-jest": "^23.1.4",
     "ts-loader": "^4.5.0",
+    "ts-node": "^7.0.1",
     "tslint-react": "^3.6.0"
   }
 }

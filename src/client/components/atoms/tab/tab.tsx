@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Tab =  styled.div`
   display: flex;
   flex: 1;
-  margin: ${({ theme }) => theme.spacing.tiny }}
+  margin: ${({ theme }) => theme.spacing.tiny };
   height: 40px;
   justify-content: center;
   align-items: center;
