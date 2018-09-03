@@ -10,7 +10,7 @@ const Title = styled.div`
   color: ${({ theme }) => theme.colors.black }};
 `;
 
-class App extends React.Component {
+class Client extends React.Component {
   public render() {
     const navItems = ['map', 'people', 'work'];
     return (
@@ -26,4 +26,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Client />, document.getElementById('root'));
