@@ -18,10 +18,7 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'ts-loader',
-          options: {
-            configFile: path.join(context, 'typescript/client.conf.json'),
-          },
+          loader: 'ts-loader'
         },
       },
     ],
@@ -37,5 +34,14 @@ module.exports = {
   resolve: {
     modules: ['node_modules', 'src'],
     extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
+    alias: {
+      '@client': `${context}/src/client`,
+      '@server': `${context}/src/server`,
+      '@atoms': `${context}/src/client/components/atoms`,
+      '@molecules': `${context}/src/client/components/molecules`,
+      '@organisms': `${context}/src/client/components/organisms`,
+      '@styles': `${context}/src/client/styles`,
+      '@redux': `${context}/src/client/redux`
+    },
   },
 };

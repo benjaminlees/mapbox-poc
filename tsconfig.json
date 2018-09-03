@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "paths": {
+      "@client/*": ["src/client/*"],
+      "@server/*": ["src/server/*"],
+      "@atoms/*": ["src/client/components/atoms/*"],
+      "@molecules/*": ["src/client/components/molecules/*"],
+      "@organisms/*": ["src/client/components/organisms/*"],
+      "@styles/*": ["src/client/styles/*"],
+      "@redux/*": ["src/client/redux/*"]
+    }
+  },
+  "include": [
+    "src/server/**/*",
+    "src/client/**/*"
+  ]
+}

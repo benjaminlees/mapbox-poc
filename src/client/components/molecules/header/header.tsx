@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import theme from '@styles/theme';
 import Tab from '../../atoms/tab/tab';
-import theme from '../../../styles/theme';
 
 const Container = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ interface Iprops {
 
 export const updateVal = (val: number) => val % 3;
 
-class Header extends React.Component<Iprops, {selected: number }> {
+class Header extends React.Component<Iprops, { selected: number }> {
   constructor(props: Iprops) {
     super(props);
     this.state = {

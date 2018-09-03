@@ -1,12 +1,35 @@
 {
-  "extends": ["tslint:latest", "tslint-react"],
+  "extends": [
+    "tslint:latest",
+    "tslint-react"
+  ],
   "rules": {
     "jsx-wrap-multiline": false,
-    "quotemark": [true, "single", "jsx-double"],
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double"
+    ],
     "no-shadowed-variable": false,
-    "no-submodule-imports": [true, "src"],
-    "no-implicit-dependencies": [true, ["src"]],
+    "no-submodule-imports": [
+      true,
+      "src"
+    ],
+    "no-implicit-dependencies": [
+      false,
+      [
+        "src",
+        "@client",
+        "@server",
+        "@atoms",
+        "@molecules",
+        "@organisms",
+        "@styles",
+        "@redux"
+      ]
+    ],
     "jsx-no-multiline-js": false,
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "ordered-imports": false
   }
 }

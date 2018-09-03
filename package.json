@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "yarn dev:server & yarn dev:client",
     "dev:client": "webpack-dev-server --config ./build/dev.config.js",
-    "dev:server": "nodemon --watch 'src/server/**/*.ts' --exec 'ts-node --project ./typescript/server.conf.json' ./src/server/index.ts",
+    "dev:server": "nodemon --watch 'src/server/**/*.ts' --exec 'ts-node  ./src/server/index.ts'",
     "test": "jest",
     "lint": "tslint -p tsconfig.json"
   },
   "private": true,
   "dependencies": {
+    "@types/koa": "^2.0.46",
+    "@types/koa-router": "^7.0.31",
+    "@types/koa-send": "^4.1.1",
     "koa": "^2.5.2",
     "koa-body": "^4.0.4",
     "koa-router": "^7.4.0",
