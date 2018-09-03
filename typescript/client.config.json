@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-      "outDir": "./dist/",
-      "baseUrl": ".",
+      "outDir": "../dist/client/",
+      "baseUrl": "..",
       "sourceMap": true,
       "noImplicitAny": true,
       "module": "commonjs",

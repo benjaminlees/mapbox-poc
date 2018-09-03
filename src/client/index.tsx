@@ -1,8 +1,8 @@
 import * as  React from 'react';
 import * as ReactDOM from 'react-dom';
+import styled, { ThemeProvider } from 'styled-components';
 import Header from './components/molecules/header/header';
 import theme from './styles/theme';
-import styled, { ThemeProvider } from 'styled-components';
 
 const Title = styled.div`
   width: 100%;
