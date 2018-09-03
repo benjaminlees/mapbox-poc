@@ -1,16 +1,28 @@
-import {createActions, handleActions} from 'redux-actions';
+import { createActions, handleActions } from 'redux-actions';
+import { Action } from '@client/types/action';
 
-export interface RootState {
+interface RootState {
   done: boolean;
 }
 
 const DO_SOMETHING = 'general/do-something';
 
+type Actions = {
+  doSomething?: Action<undefined>;
+};
+
 const initialState = {
   done: false,
 };
+/*
+{
+  general: {
+    doSomething: () => { TYPE: 'SOMETHING' },
+  }
+}
+*/
 
-export const {general: actions} = createActions({
+export const { general: actions }: any = createActions({
   [DO_SOMETHING]: null,
 });
 

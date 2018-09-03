@@ -1,20 +1,14 @@
 import * as Koa from 'koa';
 import * as body from 'koa-body';
 import * as Router from 'koa-router';
-import * as send from 'koa-send';
-import * as path from 'path';
+import { getAssets } from './handlers/assets';
 
 const app = new Koa();
 const router = new Router();
 
 app.use(body());
 
-app.use(async (ctx, next) => {
-  if (ctx.request.url.startsWith('/assets/bundle.js')) {
-    return send(ctx, path.join('built', 'server', 'frontend', 'index.js'));
-  }
-  return next();
-});
+app.use(getAssets);
 
 /* Routes */
 router.get('/*', ctx => {

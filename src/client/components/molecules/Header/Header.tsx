@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 import styled from 'styled-components';
 import theme from '@styles/theme';
 import { actions } from '@redux/general';
@@ -44,7 +45,7 @@ class Header extends React.Component<IProps, { selected: number }> {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   doSomething: () => dispatch(actions.doSomething())
 });
 
