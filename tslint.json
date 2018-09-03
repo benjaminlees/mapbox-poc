@@ -24,7 +24,8 @@
         "@molecules",
         "@organisms",
         "@styles",
-        "@redux"
+        "@redux",
+        "@config"
       ]
     ],
     "jsx-no-multiline-js": false,

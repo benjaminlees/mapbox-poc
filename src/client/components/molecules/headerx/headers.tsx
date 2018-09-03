@@ -1,7 +1,9 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import theme from '@styles/theme';
-import Tab from '../../atoms/tab/tab';
+import { actions } from '@redux/general';
+import Tab from '@atoms/tab/tab';
 
 const Container = styled.div`
   display: flex;
@@ -10,6 +12,7 @@ const Container = styled.div`
 
 interface IProps {
   navItems: string[];
+  doSomething: () => void;
 }
 
 export const updateVal = (val: number) => val % 3;
@@ -27,11 +30,12 @@ class Header extends React.Component<IProps, { selected: number }> {
     });
   }
   public render() {
-    const { navItems } = this.props;
+    const { navItems, doSomething } = this.props;
     const { selected = 0 } = this.state;
     const { beige, darkBeige } = theme.colors;
     return (
       <Container>
+        <button onClick={doSomething}>test</button>
         {navItems.map((item, i) =>
           <Tab key={i} select={() => this.select(i)} colour={i === selected ? beige : darkBeige} text={item} />)
         }
@@ -40,4 +44,8 @@ class Header extends React.Component<IProps, { selected: number }> {
   }
 }
 
-export default Header;
+const mapDispatchToProps = dispatch => ({
+  doSomething: () => dispatch(actions.doSomething())
+});
+
+export default connect(null, mapDispatchToProps)(Header);
