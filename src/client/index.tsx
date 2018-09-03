@@ -1,9 +1,12 @@
 import * as  React from 'react';
 import * as ReactDOM from 'react-dom';
-import styled, { ThemeProvider } from 'styled-components';
+import styledNormalize from 'styled-normalize'
+import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 import Header from '@molecules/Header/Header';
 import Map from '@atoms/Map/Map';
 import theme from '@styles/theme';
+
+injectGlobal`${styledNormalize}`;
 
 const Title = styled.div`
   width: 100%;
