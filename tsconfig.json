@@ -14,7 +14,8 @@
       "@molecules/*": ["src/client/components/molecules/*"],
       "@organisms/*": ["src/client/components/organisms/*"],
       "@styles/*": ["src/client/styles/*"],
-      "@redux/*": ["src/client/redux/*"]
+      "@redux/*": ["src/client/redux/*"],
+      "@config/*": ["src/client/config/*"]
     }
   },
   "include": [

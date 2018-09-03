@@ -41,7 +41,8 @@ module.exports = {
       '@molecules': `${context}/src/client/components/molecules`,
       '@organisms': `${context}/src/client/components/organisms`,
       '@styles': `${context}/src/client/styles`,
-      '@redux': `${context}/src/client/redux`
+      '@redux': `${context}/src/client/redux`,
+      '@config': `${context}/src/client/config`,
     },
   },
 };

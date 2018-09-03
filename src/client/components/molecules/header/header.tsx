@@ -12,9 +12,6 @@ interface Iprops {
   navItems: string[];
 }
 
-// this function does not do anything it is just used as
-// a test case for testing and should be removed latter
-
 export const updateVal = (val: number) => val % 3;
 
 class Header extends React.Component<Iprops, { selected: number }> {
