@@ -4,7 +4,7 @@ import { Dispatch } from 'redux';
 import styled from 'styled-components';
 import theme from '@styles/theme';
 import { actions } from '@redux/general';
-import Tab from '@atoms/tab/tab';
+import Tab from '@atoms/Tab/Tab';
 
 const Nav = styled.nav`
   margin-left: auto;
@@ -15,6 +15,7 @@ const Nav = styled.nav`
 const Container = styled.div`
   display: flex;
   width: 100%;
+  padding: ${props => props.theme.spacing.small};
 `;
 
 const Title = styled.div`
