@@ -15,7 +15,7 @@ const Nav = styled.nav`
 const Container = styled.div`
   display: flex;
   width: 100%;
-  padding: ${props => props.theme.spacing.medium};
+  padding: ${props => `${props.theme.spacing.small} ${props.theme.spacing.medium}`};
 `;
 
 const Title = styled.div`
