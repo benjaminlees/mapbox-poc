@@ -12,7 +12,7 @@
     ],
     "no-shadowed-variable": false,
     "no-submodule-imports": [
-      false,
+      false
     ],
     "no-implicit-dependencies": [
       false,
@@ -30,6 +30,8 @@
     ],
     "jsx-no-multiline-js": false,
     "jsx-no-lambda": false,
-    "ordered-imports": false
+    "ordered-imports": false,
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "object-literal-sort-keys": false
   }
 }

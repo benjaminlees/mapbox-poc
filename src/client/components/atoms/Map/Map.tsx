@@ -2,7 +2,8 @@ import * as React from 'react';
 import ReactMapboxGl, { Source } from 'react-mapbox-gl';
 import mapStyle from '@config/map-style-basic';
 
-const MAPBOX_TOKEN = 'pk.eyJ1IjoiYmVuamlsZWVzIiwiYSI6ImNqbGRudGZndDBjOGMzcG5qZXV0ZXpicTkifQ.mpDc7JtZyjUF_tMqxWRJWA';
+const MAPBOX_TOKEN =
+  'pk.eyJ1IjoiYmVuamlsZWVzIiwiYSI6ImNqbGRudGZndDBjOGMzcG5qZXV0ZXpicTkifQ.mpDc7JtZyjUF_tMqxWRJWA';
 
 const Mapbox = ReactMapboxGl({
   accessToken: MAPBOX_TOKEN,
@@ -10,7 +11,6 @@ const Mapbox = ReactMapboxGl({
 
 const containerStyles = {
   flex: 1,
-  height: '100vh',
   width: '100vw',
 };
 
@@ -18,15 +18,14 @@ const flyToOptions = {
   speed: 0.8,
 };
 
-interface IProps {
-}
+// interface IProps {}
 
 interface IState {
   center: number[];
   defaultZoom: number;
 }
 
-export default class Map extends React.Component<IProps, IState> {
+export default class Map extends React.Component<{}, IState> {
   constructor(props: {}) {
     super(props);
 

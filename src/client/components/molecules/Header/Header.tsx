@@ -4,7 +4,7 @@ import { Dispatch } from 'redux';
 import styled from 'styled-components';
 import theme from '@styles/theme';
 import { actions } from '@redux/general';
-import Tab from '@atoms/Tab/Tab';
+import NavItem from '@atoms/NavItem/NavItem';
 
 const Nav = styled.nav`
   margin-left: auto;
@@ -15,7 +15,7 @@ const Nav = styled.nav`
 const Container = styled.div`
   display: flex;
   width: 100%;
-  padding: ${props => props.theme.spacing.small};
+  padding: ${props => props.theme.spacing.medium};
 `;
 
 const Title = styled.div`
@@ -39,11 +39,13 @@ class Header extends React.Component<IProps, { selected: number }> {
       selected: 0,
     };
   }
+
   public select = (val: number) => {
     this.setState({
       selected: updateVal(val),
     });
   }
+
   public render() {
     const { navItems, doSomething } = this.props;
     const { selected = 0 } = this.state;
@@ -51,13 +53,16 @@ class Header extends React.Component<IProps, { selected: number }> {
     return (
       <Container>
         <img src="/assets/logo.svg" />
-        <Title>
-          property book
-        </Title>
+        <Title>property book</Title>
         <Nav>
-          {navItems.map((item, i) =>
-            <Tab key={i} select={() => this.select(i)} colour={i === selected ? beige : darkBeige} text={item} />)
-          }
+          {navItems.map((item, i) => (
+            <NavItem
+              key={i}
+              select={() => this.select(i)}
+              colour={i === selected ? beige : darkBeige}
+              text={item}
+            />
+          ))}
         </Nav>
         <button onClick={doSomething}>test</button>
       </Container>
@@ -66,7 +71,10 @@ class Header extends React.Component<IProps, { selected: number }> {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  doSomething: () => dispatch(actions.doSomething())
+  doSomething: () => dispatch(actions.doSomething()),
 });
 
-export default connect(null, mapDispatchToProps)(Header);
+export default connect(
+  null,
+  mapDispatchToProps,
+)(Header);

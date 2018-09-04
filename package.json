@@ -8,7 +8,8 @@
     "dev:client": "webpack-dev-server --config ./build/dev.config.js",
     "dev:server": "nodemon --watch 'src/server/**/*.ts' --exec 'ts-node  ./src/server/index.ts'",
     "test": "jest",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "pretty": "prettier --write 'src/**/*.{ts,tsx}'"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +25,7 @@
     "koa-send": "^5.0.0",
     "mapbox-gl": "^0.48.0",
     "nodemon": "^1.18.4",
+    "prettier": "^1.14.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-mapbox-gl": "^3.9.2",

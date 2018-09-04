@@ -1,6 +1,6 @@
-export interface Action<P> {
-  type: string,
-  payload?: P,
-  error?: boolean,
-  meta?: any
+export interface IAction<P> {
+  type: string;
+  payload?: P;
+  error?: boolean;
+  meta?: any;
 }

@@ -3,17 +3,20 @@ import styled from 'styled-components';
 import Header from '@molecules/Header/Header';
 import Map from '@atoms/Map/Map';
 
-interface IProps {
-}
+const MainOuter = styled.main`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
 
-class Main extends React.Component<IProps, {}> {
+class Main extends React.Component<{}, {}> {
   public render() {
     const navItems = ['map', 'people', 'work'];
     return (
-      <div>
+      <MainOuter>
         <Header navItems={navItems} />
         <Map />
-      </div>
+      </MainOuter>
     );
   }
 }
