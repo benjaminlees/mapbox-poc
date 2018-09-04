@@ -1,22 +1,23 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+interface IProps {
+  select?: () => void;
+  text: string;
+}
+
 const NavItemOuter = styled.div`
-  display: flex;
   flex: 1;
-  margin: ${({ theme }) => theme.spacing.tiny};
-  height: 40px;
-  min-width: 200px;
-  max-width: 200px;
-  justify-content: center;
-  align-items: center;
+  margin: 0 ${({ theme }) => theme.spacing.sm};
+  color: ${({ theme }) => theme.colors.gray60};
+  font-size: ${({ theme }) => theme.fontSizes.regular};
   text-transform: capitalize;
   :hover {
     background: ${({ theme }) => theme.colors.white}};
   }
 `;
 
-const NavItem = (props: { select?: () => void; colour: string; text: string }) => {
+const NavItem = (props: IProps) => {
   return <NavItemOuter onClick={props.select}>{props.text}</NavItemOuter>;
 };
 

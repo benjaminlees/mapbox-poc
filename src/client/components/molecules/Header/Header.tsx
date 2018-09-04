@@ -6,23 +6,33 @@ import theme from '@styles/theme';
 import { actions } from '@redux/general';
 import NavItem from '@atoms/NavItem/NavItem';
 
+const HeaderOuter = styled.div`
+  display: flex;
+  height: ${({ theme }) => `${theme.sizes.header}`};
+  width: 100%;
+  padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.m}`};
+  align-items: center;
+  box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.4);
+`;
+
+const Title = styled.div`
+  font-size: ${props => props.theme.fontSizes.medium};
+  color: ${props => props.theme.colors.funGreen};
+  font-weight: bold;
+  text-transform: uppercase;
+`;
+
 const Nav = styled.nav`
   margin-left: auto;
   display: flex;
   flex-direction: row;
 `;
 
-const Container = styled.div`
-  display: flex;
-  width: 100%;
-  padding: ${props => `${props.theme.spacing.small} ${props.theme.spacing.medium}`};
-`;
-
-const Title = styled.div`
-  padding: ${props => props.theme.spacing.medium};
-  font-size: ${props => props.theme.fontSizes.medium};
-  color: ${props => props.theme.colors.primary};
-  font-weight: bold;
+const Logo = styled.img`
+  height: 100%;
+  border-right: 1px solid ${props => props.theme.colors.gray40};
+  padding-right: ${props => props.theme.spacing.sm};
+  margin-right: ${props => props.theme.spacing.sm};
 `;
 
 interface IProps {
@@ -49,23 +59,22 @@ class Header extends React.Component<IProps, { selected: number }> {
   public render() {
     const { navItems, doSomething } = this.props;
     const { selected = 0 } = this.state;
-    const { beige, darkBeige } = theme.colors;
+
     return (
-      <Container>
-        <img src="/assets/logo.svg" />
+      <HeaderOuter>
+        <Logo src="/assets/logo.svg" alt="CBRE" />
         <Title>property book</Title>
         <Nav>
           {navItems.map((item, i) => (
             <NavItem
               key={i}
               select={() => this.select(i)}
-              colour={i === selected ? beige : darkBeige}
               text={item}
             />
           ))}
         </Nav>
         <button onClick={doSomething}>test</button>
-      </Container>
+      </HeaderOuter>
     );
   }
 }

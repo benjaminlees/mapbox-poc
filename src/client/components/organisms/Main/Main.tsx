@@ -7,6 +7,7 @@ const MainOuter = styled.main`
   display: flex;
   flex-direction: column;
   height: 100%;
+  font-family: ${({ theme }) => theme.fontFamily.primary};
 `;
 
 class Main extends React.Component<{}, {}> {
